@@ -20,7 +20,8 @@ Compute mode depends on Tensorflow configuration: GPU or CPU (GPU is recommended
 11. Easy regularization set up and mixing (Dropout, L2, L1, Early Stop, etc.)
 12. Access to all Keras optimizers & callback support
 
-Comprehensive documentation for Deep Fast Vision is available both in the docs folder and at: <a href="https://fabprezja.github.io/deep-fast-vision/" target="_blank">https://fabprezja.github.io/deep-fast-vision/</a>
+Comprehensive documentation for Deep Fast Vision is available both in the docs folder and at the [**documentation page**](https://fabprezja.github.io/deep-fast-vision/).
+
 
 ## Install using pip:
 
@@ -88,7 +89,7 @@ The above code will return:
 **User provided:**
 1. Data paths: The library identifies and loads the data from the provided paths for training, validation, and testing.
 2. Transfer learning architecture (VGG16): The library fetches the VGG16 pre-trained model and uses it as the base for the new neural network.
-3. Dense layer configuration ([144, 89, 55]): The library creates dense layers with 144, 89, and 55 neurons, respectively, and adds them to the neural network.
+3. Dense layer configuration [144, 89, 55]: The library creates dense layers with 144, 89, and 55 neurons, respectively, and adds them to the neural network.
 4. Any callback: Insert the user-defined callback (WanDB in this case).
 
 **After processing the user-provided information, the library automatically performs the following tasks to create, train, and evaluate the neural network model (customizable in lower levels of abstraction):**
