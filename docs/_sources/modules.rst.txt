@@ -1,0 +1,10 @@
+deepfastvision
+==============
+
+.. toctree::
+   :maxdepth: 4
+
+   core
+   data_management
+   model_components
+   plotting

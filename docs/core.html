@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>core package &mdash; Deep Fast Vision 1.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="data_management package" href="data_management.html" />
+    <link rel="prev" title="Welcome to Deep Fast Vision’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Deep Fast Vision
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">core package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-deeptransferclassification-module">core.DeepTransferClassification module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#core.DeepTransferClassification"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.export_all"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.export_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.export_configuration"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.export_configuration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.get_kwargs"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.get_kwargs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.kwargs"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.kwargs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.model_feature_extract"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.model_feature_extract()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.model_predict"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.model_predict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core.DeepTransferClassification.run"><code class="docutils literal notranslate"><span class="pre">DeepTransferClassification.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_management.html">data_management package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_components.html">model_components package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">plotting package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Fast Vision</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">core package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/core.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="core-package">
+<h1>core package<a class="headerlink" href="#core-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="core-deeptransferclassification-module">
+<h2>core.DeepTransferClassification module<a class="headerlink" href="#core-deeptransferclassification-module" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core.DeepTransferClassification">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.</span></span><span class="sig-name descname"><span class="pre">DeepTransferClassification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class represents a deep transfer learning classification experiment with customizable settings.
+It is designed to facilitate and automate the creation, training, and evaluation of various models using optional
+data augmentation, regularization, and metric tracking. The class provides
+default settings which can be updated using keyword arguments for a flexible and customizable
+experiment configuration.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.export_all">
+<span class="sig-name descname"><span class="pre">export_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exports'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification.export_all" title="Permalink to this definition"></a></dt>
+<dd><p>Wrapper function to export the results, model, and configuration of the training and testing process.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>results (dict): The results of the training and testing process.
+base_path (str, optional): The base path for saving the exported files. Defaults to “exports”.
+export_model (bool, optional): Whether to save the model architecture and weights. Defaults to True.
+additive (bool, optional): Whether to create a new folder with a random name inside the base path. Defaults to True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.export_configuration">
+<span class="sig-name descname"><span class="pre">export_configuration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification.export_configuration" title="Permalink to this definition"></a></dt>
+<dd><p>Return the current settings dictionary for the experiment.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.get_kwargs">
+<span class="sig-name descname"><span class="pre">get_kwargs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification.get_kwargs" title="Permalink to this definition"></a></dt>
+<dd><p>Get the default configuration settings for the model training and evaluation pipeline.</p>
+<dl>
+<dt>Returns:</dt><dd><blockquote>
+<div><p>dict: A dictionary containing the default configuration settings for the pipeline, with the following keys:</p>
+<ul>
+<li><p>‘paths’:</p>
+<blockquote>
+<div><ul>
+<li><p>‘train_val_data’: str, path to training and validation data folder, default: ‘path_to_train_val_data’</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the expected folder configuration:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>train/
+    class_A/
+        image_1A.png
+        image_2A.png
+    class_B/
+        image_1B.png
+        image_2B.png
+val/
+    class_A/
+        image_3A.png
+        image_4A.png
+    class_B/
+        image_3B.png
+        image_4B.png
+</pre></div>
+</div>
+<p>The library uses the key words, ‘train’, ‘val’ and ‘test’ for the three sets
+(the same format is used for the testing data), while the external test name may vary</p>
+<p>If your data is not distributed in this format, you can simply use
+the DataSplitter from data_management.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘test_data_folder’: str or None, path to test data folder, default: None</p></li>
+<li><p>‘external_test_data_folder’: str or None, path to external test data folder, default: None</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>‘model’:</p>
+<blockquote>
+<div><blockquote>
+<div><ul>
+<li><p>‘image_size’: tuple, target image re-size (height, width), default: (224, 224)</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These values are used to resize generators images. It is recommended to use
+the original input size of the chosen transfer model.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘transfer_arch’: str, transfer architecture name, default: ‘VGG19’</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Various  transfer architectures are available, you can call them by name (e.g. ‘ResNet101V2’).
+For a list of available architectures, refer to <a class="reference external" href="https://keras.io/api/applications">https://keras.io/api/applications</a>.
+Don’t forget to update the freeze settings from the previous
+architecture before loading a new one.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘pre_trained’: str, which pre-trained weights to load, default: ‘imagenet’</p></li>
+<li><p>‘before_dense’: str, layer type before dense but after</p></li>
+</ul>
+<p>transfer architecture layers, default: ‘Flatten’</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently two options exist, Flatten or GlobalAveragePooling2D.</p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>‘dense_layers’: list, number of dense layers after transfer</p></li>
+</ul>
+<p>architecture and ‘before_dense’ layer argument, default: [256]</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of dense layers is equal to the length of the list.</p>
+</div>
+</div></blockquote>
+<ul>
+<li><p>‘dense_activations’: str, activation function for dense layers, default: ‘elu’</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a list of available activations, refer to <a class="reference external" href="https://keras.io/api/layers/activations/">https://keras.io/api/layers/activations/</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘initializer’: str, dense layer initializer, default: ‘he_normal’</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a list of available initializers, refer to <a class="reference external" href="https://keras.io/api/layers/initializers/">https://keras.io/api/layers/initializers/</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘batch_norm’: bool, whether to use batch normalization between dense layers, default: False</p></li>
+<li><p>‘regularization’: str, regularization type, default: ‘Dropout’</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The regularization method to apply (‘L1’, ‘L2’, ‘Dropout+L1’, ‘Dropout+L2’, or None).</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>‘l1_strength’: float, L1 regularization strength, default: 0.001</p></li>
+<li><p>‘l2_strength’: float, L2 regularization strength, default: 0.001</p></li>
+<li><p>‘dropout_rate’: float, dropout rate, default: 0.21</p></li>
+<li><p>‘freeze_weights’: int or None, number of layers to freeze, default: None</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If set to None, all layers will be trainable. If set to an integer,
+the last n layers will be frozen.</p>
+</div>
+</li>
+<li><p>‘unfreeze_block’: list or None, list of blocks or layers to unfreeze, default: [‘block5’]</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If set to None, all layers will be trainable. If set to a list, the specified blocks
+or layer names (as strings) will be unfrozen, e.g., [‘block1’, ‘block2’, ‘block3’].</p>
+</div>
+</li>
+<li><p>‘freeze_up_to’: str or None, freeze layers up to a specific block, default: ‘flatten’</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If set to None, all layers will be trainable. If set to a string, all layers up to the specified
+block or layer will be frozen. When using both ‘freeze_up_to’ and ‘unfreeze_block’,
+it is possible to selectively unfreeze layers or blocks within the ‘freeze_up_to’ range.</p>
+</div>
+</li>
+<li><p>‘show_freeze_status’: bool, whether to show layer freeze status, default: True</p></li>
+<li><p>‘number_of_targets’: int, number of target classes</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This argument is automatically updated based on the number of classes in the training data.
+Do not modify it unless you are certain about the consequences.</p>
+</div>
+</li>
+<li><p>‘target_type’: str or None, target type</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This argument is automatically updated based on the number of classes in the training data.
+Do not change, unless you know what you are doing.</p>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>‘training’:</p>
+<blockquote>
+<div><ul>
+<li><p>‘epochs’: int, number of epochs, default: 12</p></li>
+<li><p>‘batch_size’: int, batch size, default: 32</p></li>
+<li><p>‘learning_rate’: float, learning rate, default: 2e-5</p></li>
+<li><p>‘optimizer_name’: str, optimizer name, default: ‘Adam’</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Provide name of the optimizer you want to use.
+For a list of available optimizers, refer to <a class="reference external" href="https://keras.io/api/optimizers/">https://keras.io/api/optimizers/</a></p>
+</div>
+</li>
+<li><p>‘add_optimizer_params’: dict, additional optimizer parameters, default: {}</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Add additional parameters to the optimizer other than learning rate.
+For a list of available parameters, refer to <a class="reference external" href="https://keras.io/api/optimizers/">https://keras.io/api/optimizers/</a></p>
+<p>For example given the Adam optimizer, you may add:
+{‘beta_1’: 0.8, ‘beta_2’: 0.8, ‘epsilon’: 1e-05, ‘clipnorm’: 0.8}
+Or any parameter shown in the documentation: <a class="reference external" href="https://keras.io/api/optimizers/adam/">https://keras.io/api/optimizers/adam/</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘class_weights’: bool, whether to use class weights, default: True</p></li>
+<li><p>‘metrics’: list, list of compatible evaluation metrics, default: [‘accuracy’]</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a list of available metrics, refer to <a class="reference external" href="https://keras.io/api/metrics/">https://keras.io/api/metrics/</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘augmentation’: str, data augmentation type, default: ‘basic’</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The available augmentation options are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">augmentation_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;no_aug&#39;</span><span class="p">:</span> <span class="n">ImageDataGenerator</span> <span class="p">(</span>
+        <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">preprocess_input</span>
+    <span class="p">)</span> <span class="p">,</span>
+    <span class="s1">&#39;basic&#39;</span><span class="p">:</span> <span class="n">ImageDataGenerator</span> <span class="p">(</span>
+        <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">preprocess_input</span> <span class="p">,</span>
+        <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span> <span class="p">,</span>
+    <span class="s1">&#39;advanced&#39;</span><span class="p">:</span> <span class="n">ImageDataGenerator</span> <span class="p">(</span>
+        <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">preprocess_input</span> <span class="p">,</span>
+        <span class="n">rotation_range</span><span class="o">=</span><span class="mi">40</span> <span class="p">,</span>
+        <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span>
+        <span class="n">fill_mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span>
+    <span class="p">)</span> <span class="p">,</span>
+    <span class="s1">&#39;advanced_with_blur&#39;</span><span class="p">:</span> <span class="n">ImageDataGenerator</span> <span class="p">(</span>
+        <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">preprocess_input_with_blur</span> <span class="p">,</span>
+        <span class="n">rotation_range</span><span class="o">=</span><span class="mi">40</span> <span class="p">,</span>
+        <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.2</span> <span class="p">,</span>
+        <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span> <span class="p">,</span>
+        <span class="n">fill_mode</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span>
+    <span class="p">)</span> <span class="p">,</span>
+    <span class="s1">&#39;custom&#39;</span><span class="p">:</span> <span class="n">ImageDataGenerator</span> <span class="p">(</span>
+        <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">custom_aug_with_preprocess_input</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>The library always retrieves the appropriate pre-processing function for the selected
+transfer learning architecture, along with the specified augmentation. This includes the
+‘preprocess_input_with_blur’ option, which introduces varying levels of blur as an additional
+augmentation technique. The ‘custom’ augmentation option enables you to supply your own augmentation
+without fetching the corresponding pre-processing function for the transfer architecture.</p>
+</li>
+<li><p>‘custom_augmentation’: callable or None, custom keras augmentation, default: None</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user provided augmentation. More about augmentation:https://tinyurl.com/augTFKeras</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is only applicable when the ‘augmentation’ argument is set to ‘custom’.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘callback’: list or None, list of callbacks, default: None</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>User provided callbacks and/or available callbacks from <a class="reference external" href="https://keras.io/api/callbacks/">https://keras.io/api/callbacks/</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘early_stop’: float or None, whether to use early stopping epochs set as</p></li>
+</ul>
+<p>a fraction of total epochs, default: False</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For example, if there are 100 epochs and early_stop is set to 0.1, early stopping will</p>
+</div>
+<p>be triggered if the model does not improve for 10 consecutive epochs.</p>
+</div></blockquote>
+<ul>
+<li><p>‘warm_pretrain_dense’: bool, whether to warm pretrain dense layers, default: True</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pre-train dense layers with a frozen transfer model, then unfreeze and train as specified</p>
+</div>
+<p>(to mitigate destructive effects on unfrozen transfer architecture). It is recommended to use this
+approach only if there are blocks or layers specified unfrozen in the transfer architecture.</p>
+</div></blockquote>
+</li>
+<li><p>‘warm_pretrain_epochs’: int, number of warm pretraining epochs, default: 5</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>‘evaluation’:</p>
+<blockquote>
+<div><ul>
+<li><p>‘evaluate_mode’: bool, whether to use evaluation mode, default: False</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If True, training will not begin.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘auto_mode’: bool, whether to use automatic evaluation, default: True</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If True, final test on the best epoch will be performed automatically.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>‘preloaded_weights_path’: str or None, path to user preloaded weights file, default: None</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If provided, the model will be loaded with the provided weights.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>‘saving’:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘save_weights’: bool, whether to save model weights, default: True</p></li>
+<li><p>‘save_weights_folder’: str, path to save weights folder, default: ‘path_to_save_weights’</p></li>
+<li><p>‘save_best_weights’: str, which metric to use to save the best</p></li>
+</ul>
+<p>weights (if ‘all’ no metric is used), default: ‘val_loss’
+- ‘save_weights_silent’: bool, whether to silently save weights, default: False</p>
+</div></blockquote>
+</li>
+<li><p>‘misc’:</p>
+<blockquote>
+<div><ul>
+<li><p>‘show_summary’: bool, whether to display model summary, default: True</p></li>
+<li><p>‘plot_curves’: bool, whether to plot validation curves, default: True</p></li>
+<li><p>‘show_min_max_plot’: bool, whether to show min-max values within validation curves, default: True</p></li>
+<li><p>‘plot_conf’: bool, whether to plot confusion matrix, default: True</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The confusion matrix is normalized (rows), and automaticaly uses label names if available.</p>
+</div>
+<p>The matrix also adjusts depending on the number of classes.</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.kwargs">
+<span class="sig-name descname"><span class="pre">kwargs</span></span><a class="headerlink" href="#core.DeepTransferClassification.kwargs" title="Permalink to this definition"></a></dt>
+<dd><p>Return the default settings dictionary for the experiment, including paths, model settings,
+training settings, evaluation settings, saving settings, and miscellaneous settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.model_feature_extract">
+<span class="sig-name descname"><span class="pre">model_feature_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification.model_feature_extract" title="Permalink to this definition"></a></dt>
+<dd><p>Perform feature extraction for train, validation, test, and external test generators using the specified layer.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>layer_index (int, optional): Index of the desired layer for feature extraction. Defaults to -2.
+layer_name (str, optional): Name of the desired layer for feature extraction. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>X_train (np.ndarray): Extracted features for the training set.
+y_train (np.ndarray): Labels for the training set.
+X_val (np.ndarray): Extracted features for the validation set.
+y_val (np.ndarray): Labels for the validation set.
+X_test (np.ndarray): Extracted features for the test set, or None if no test generator is provided.
+y_test (np.ndarray): Labels for the test set, or None if no test generator is provided.
+X_test_external (np.ndarray): Extracted features for the external test set, or None if no external test generator is provided.
+y_test_external (np.ndarray): Labels for the external test set, or None if no external test generator is provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.model_predict">
+<span class="sig-name descname"><span class="pre">model_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_to_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'variance'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification.model_predict" title="Permalink to this definition"></a></dt>
+<dd><p>Predict the classes of images in a folder using the trained model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path_to_folder (str): Path to the directory containing images.
+batch_size (int, optional): Number of image samples per batch. Defaults to 32.
+verbose (bool, optional): Whether to print results during prediction. Defaults to True.
+sort_by (str, optional): Method to sort the predicted results. Defaults to ‘variance’.</p>
+</dd>
+<dt>Returns:</dt><dd><p>results (list): A list of  dictionaries containing the prediction results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.DeepTransferClassification.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.DeepTransferClassification.run" title="Permalink to this definition"></a></dt>
+<dd><p>Run the main pipeline, including initialization, training or evaluating, and processing the test results.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>model (tensorflow.python.keras.engine.functional.Functional): The trained or evaluated Keras model.
+results (dict): A dictionary containing training results and configuration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-core" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Deep Fast Vision’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="data_management.html" class="btn btn-neutral float-right" title="data_management package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Fabi Prezja.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

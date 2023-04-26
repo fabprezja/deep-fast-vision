@@ -1,0 +1,21 @@
+plotting package
+================
+
+Submodules
+----------
+
+plotting.plot\_helpers module
+-----------------------------
+
+.. automodule:: plotting.plot_helpers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: plotting
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,21 @@
+model\_components.callbacks package
+===================================
+
+Submodules
+----------
+
+model\_components.callbacks.custom\_save\_weights module
+--------------------------------------------------------
+
+.. automodule:: model_components.callbacks.custom_save_weights
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: model_components.callbacks
+   :members:
+   :undoc-members:
+   :show-inheritance:

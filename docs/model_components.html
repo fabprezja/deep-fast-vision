@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>model_components package &mdash; Deep Fast Vision 1.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="model_components.callbacks package" href="model_components.callbacks.html" />
+    <link rel="prev" title="data_management package" href="data_management.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Deep Fast Vision
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_management.html">data_management package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">model_components package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model_components.callbacks.html">model_components.callbacks package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_components.preprocessing.html">model_components.preprocessing package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-model_components.export_helpers">model_components.export_helpers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.export_helpers.export"><code class="docutils literal notranslate"><span class="pre">export()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.export_helpers.export_best_weights"><code class="docutils literal notranslate"><span class="pre">export_best_weights()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.export_helpers.export_history_to_csv"><code class="docutils literal notranslate"><span class="pre">export_history_to_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.export_helpers.export_kwargs"><code class="docutils literal notranslate"><span class="pre">export_kwargs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.export_helpers.export_test_loss"><code class="docutils literal notranslate"><span class="pre">export_test_loss()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.export_helpers.export_test_results"><code class="docutils literal notranslate"><span class="pre">export_test_results()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-model_components.model_creation">model_components.model_creation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.model_creation.create_base_model"><code class="docutils literal notranslate"><span class="pre">create_base_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.model_creation.create_model"><code class="docutils literal notranslate"><span class="pre">create_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.model_creation.get_preprocess_input_function"><code class="docutils literal notranslate"><span class="pre">get_preprocess_input_function()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-model_components.prediction_helpers">model_components.prediction_helpers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.prediction_helpers.create_predict_datagen"><code class="docutils literal notranslate"><span class="pre">create_predict_datagen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.prediction_helpers.create_predict_generator"><code class="docutils literal notranslate"><span class="pre">create_predict_generator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.prediction_helpers.generate_predictions"><code class="docutils literal notranslate"><span class="pre">generate_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.prediction_helpers.model_predict"><code class="docutils literal notranslate"><span class="pre">model_predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model_components.prediction_helpers.process_predictions"><code class="docutils literal notranslate"><span class="pre">process_predictions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-model_components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">plotting package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Deep Fast Vision</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">model_components package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/model_components.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="model-components-package">
+<h1>model_components package<a class="headerlink" href="#model-components-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_components.callbacks.html">model_components.callbacks package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_components.callbacks.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_components.callbacks.html#module-model_components.callbacks.custom_save_weights">model_components.callbacks.custom_save_weights module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model_components.callbacks.html#model_components.callbacks.custom_save_weights.CustomSaveWeights"><code class="docutils literal notranslate"><span class="pre">CustomSaveWeights</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model_components.callbacks.html#model_components.callbacks.custom_save_weights.CustomSaveWeights.on_epoch_end"><code class="docutils literal notranslate"><span class="pre">CustomSaveWeights.on_epoch_end()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model_components.callbacks.html#module-model_components.callbacks">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_components.preprocessing.html">model_components.preprocessing package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_components.preprocessing.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_components.preprocessing.html#module-model_components.preprocessing.preprocessing">model_components.preprocessing.preprocessing module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model_components.preprocessing.html#model_components.preprocessing.preprocessing.create_image_data_generator"><code class="docutils literal notranslate"><span class="pre">create_image_data_generator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_components.preprocessing.html#model_components.preprocessing.preprocessing.variable_gaussian_blur"><code class="docutils literal notranslate"><span class="pre">variable_gaussian_blur()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model_components.preprocessing.html#module-model_components.preprocessing">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-model_components.export_helpers">
+<span id="model-components-export-helpers-module"></span><h2>model_components.export_helpers module<a class="headerlink" href="#module-model_components.export_helpers" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.export_helpers.export">
+<span class="sig-prename descclassname"><span class="pre">model_components.export_helpers.</span></span><span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exports'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.export_helpers.export" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the results of the training and testing process.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (Model): The trained model.
+kwargs (dict): The configuration used for training.
+results (dict): The pipeline results of the training and testing process.
+base_path (str, optional): The base path for saving the exported files. Defaults to “exports”.
+export_model (bool, optional): Whether to save the model architecture and weights. Defaults to False.
+additive (bool, optional): Whether to generate a random folder inside the base path. If set to False,
+the export happens exactly at the user-specified folder. Defaults to True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.export_helpers.export_best_weights">
+<span class="sig-prename descclassname"><span class="pre">model_components.export_helpers.</span></span><span class="sig-name descname"><span class="pre">export_best_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.export_helpers.export_best_weights" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the best weights of the model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (Model): The trained model.
+file_path (str): The path where the best weights will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.export_helpers.export_history_to_csv">
+<span class="sig-prename descclassname"><span class="pre">model_components.export_helpers.</span></span><span class="sig-name descname"><span class="pre">export_history_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">history</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.export_helpers.export_history_to_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the training history to a CSV file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>history (History): The training history object.
+file_path (str): The path where the history CSV file will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.export_helpers.export_kwargs">
+<span class="sig-prename descclassname"><span class="pre">model_components.export_helpers.</span></span><span class="sig-name descname"><span class="pre">export_kwargs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.export_helpers.export_kwargs" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the training configuration (kwargs) to a file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>kwargs (dict): The configuration used for training.
+file_path (str): The path where the configuration will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.export_helpers.export_test_loss">
+<span class="sig-prename descclassname"><span class="pre">model_components.export_helpers.</span></span><span class="sig-name descname"><span class="pre">export_test_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.export_helpers.export_test_loss" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the test loss.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>test_loss (float): The test loss value.
+file_path (str): The path where the test loss will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.export_helpers.export_test_results">
+<span class="sig-prename descclassname"><span class="pre">model_components.export_helpers.</span></span><span class="sig-name descname"><span class="pre">export_test_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.export_helpers.export_test_results" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the test results to a CSV file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>results (dict): The pipeline results of the training and testing process.
+file_path (str): The path where the test results CSV file will be saved.
+kwargs (dict): The configuration used for training.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-model_components.model_creation">
+<span id="model-components-model-creation-module"></span><h2>model_components.model_creation module<a class="headerlink" href="#module-model_components.model_creation" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.model_creation.create_base_model">
+<span class="sig-prename descclassname"><span class="pre">model_components.model_creation.</span></span><span class="sig-name descname"><span class="pre">create_base_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transfer_arch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_trained</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.model_creation.create_base_model" title="Permalink to this definition"></a></dt>
+<dd><p>Create a base model using the specified transfer architecture and pretrained weights.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>transfer_arch (str): Name of the transfer architecture (e.g., ‘VGG19’, ‘ResNet50’, etc.).
+image_size (tuple): Tuple containing the height and width of the input image (e.g., (224, 224)).
+pre_trained (str): Name of the dataset used to pre-train the model (e.g., ‘imagenet’).</p>
+</dd>
+<dt>Returns:</dt><dd><p>Tuple[Model, function]: A tuple containing the base model and the preprocess input function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.model_creation.create_model">
+<span class="sig-prename descclassname"><span class="pre">model_components.model_creation.</span></span><span class="sig-name descname"><span class="pre">create_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">before_dense</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_targets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_make</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initializer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_norm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.model_creation.create_model" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a model based on the provided arguments.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>base_model (tf.keras.Model): The base model for transfer learning.
+before_dense (str): The layer type to add before dense layers (‘Flatten’ or ‘GlobalAveragePooling2D’).
+regularization (str): The regularization method to apply (‘L1’, ‘L2’, ‘Dropout+L1’, ‘Dropout+L2’, or None).
+number_of_targets (int): The number of target classes.
+dense_make (list): A list of integers representing the number of neurons in each dense layer.
+initializer (str): The initializer to use for dense layers.
+batch_norm (bool): Whether to use batch normalization in the model.
+l1_strength (float): The L1 regularization strength.
+l2_strength (float): The L2 regularization strength.
+dropout_rate (float): The dropout rate for dropout regularization.
+activations (str): The activation function to use for dense layers.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tf.keras.Model: The created model based on the provided arguments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.model_creation.get_preprocess_input_function">
+<span class="sig-prename descclassname"><span class="pre">model_components.model_creation.</span></span><span class="sig-name descname"><span class="pre">get_preprocess_input_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.model_creation.get_preprocess_input_function" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the preprocessing function associated with the given transfer model name.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model_name (str): The name of the pre-trained model.</p>
+</dd>
+<dt>Returns:</dt><dd><p>function: The preprocess_input function associated with the given transfer model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-model_components.prediction_helpers">
+<span id="model-components-prediction-helpers-module"></span><h2>model_components.prediction_helpers module<a class="headerlink" href="#module-model_components.prediction_helpers" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.prediction_helpers.create_predict_datagen">
+<span class="sig-prename descclassname"><span class="pre">model_components.prediction_helpers.</span></span><span class="sig-name descname"><span class="pre">create_predict_datagen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preprocess_input_func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.prediction_helpers.create_predict_datagen" title="Permalink to this definition"></a></dt>
+<dd><p>Create an ImageDataGenerator instance for prediction.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>preprocess_input_func (function): Preprocessing function for input images.</p>
+</dd>
+<dt>Returns:</dt><dd><p>ImageDataGenerator: An ImageDataGenerator instance for prediction.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.prediction_helpers.create_predict_generator">
+<span class="sig-prename descclassname"><span class="pre">model_components.prediction_helpers.</span></span><span class="sig-name descname"><span class="pre">create_predict_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_to_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess_input_func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.prediction_helpers.create_predict_generator" title="Permalink to this definition"></a></dt>
+<dd><p>Create an image generator for prediction.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path_to_folder (str): Path to the directory containing images.
+image_size (tuple): Tuple of (height, width) for resizing images.
+target_type (str): Type of target labels (‘binary’ or ‘categorical’).
+batch_size (int): Number of samples per gradient update.
+preprocess_input_func (function): Preprocessing function for input images.</p>
+</dd>
+<dt>Returns:</dt><dd><p>DirectoryIterator: An iterator that yields (data, labels) tuples.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.prediction_helpers.generate_predictions">
+<span class="sig-prename descclassname"><span class="pre">model_components.prediction_helpers.</span></span><span class="sig-name descname"><span class="pre">generate_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predict_generator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.prediction_helpers.generate_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Generate predictions using a trained model and a predict_generator.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (Model): A trained Keras model.
+predict_generator (DirectoryIterator): An iterator that yields (data, labels) tuples.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: A tuple containing the predictions and the filenames.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.prediction_helpers.model_predict">
+<span class="sig-prename descclassname"><span class="pre">model_components.prediction_helpers.</span></span><span class="sig-name descname"><span class="pre">model_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess_input_func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_to_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'variance'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.prediction_helpers.model_predict" title="Permalink to this definition"></a></dt>
+<dd><p>Predict the classes of images in a folder using a trained model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model (Model): A trained Keras model.
+preprocess_input_func (function): Preprocessing function for input images.
+path_to_folder (str): Path to the directory containing images.
+class_labels (list): A list of class labels.
+image_size (tuple): Tuple of (height, width) for resizing images.
+target_type (str): Type of target labels (‘binary’ or ‘categorical’).
+batch_size (int, optional): Number of image samples per batch. Defaults to 32.
+verbose (bool, optional): Whether to print results. Defaults to True.
+sort_by (str, optional): Sorting criteria for results (‘confidence’ or ‘variance’). Defaults to ‘variance’.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: A list of dictionaries containing prediction results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="model_components.prediction_helpers.process_predictions">
+<span class="sig-prename descclassname"><span class="pre">model_components.prediction_helpers.</span></span><span class="sig-name descname"><span class="pre">process_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_to_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filenames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_components.prediction_helpers.process_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Process the predictions and generate a list of dictionaries containing the results.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>class_labels (list): A list of class labels.
+path_to_folder (str): Path to the directory containing images.
+predictions (np.array): Predictions generated by the model.
+filenames (list): A list of filenames.
+target_type (str): Type of target labels (‘binary’ or ‘categorical’).
+verbose (bool): Whether to print results.
+sort_by (str, optional): Sorting criteria for results (‘confidence’ or ‘variance’).</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: A list of dictionaries containing prediction results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-model_components">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-model_components" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data_management.html" class="btn btn-neutral float-left" title="data_management package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="model_components.callbacks.html" class="btn btn-neutral float-right" title="model_components.callbacks package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Fabi Prezja.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
