@@ -20,7 +20,7 @@ Compute mode depends on Tensorflow configuration: GPU or CPU (GPU is recommended
 11. Easy regularization set up and mixing (Dropout, L2, L1, Early Stop, etc.)
 12. Access to all Keras optimizers & callback support
 
-Comprehensive documentation for Deep Fast Vision is available both in the docs folder and at: https://fabprezja.github.io/deep-fast-vision/
+Comprehensive documentation for Deep Fast Vision is available both in the docs folder and at: <a href="https://fabprezja.github.io/deep-fast-vision/" target="_blank">https://fabprezja.github.io/deep-fast-vision/</a>
 
 ## Install using pip:
 
