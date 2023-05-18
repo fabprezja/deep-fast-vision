@@ -10,7 +10,7 @@ Compute mode depends on Tensorflow configuration: GPU or CPU (GPU is recommended
 1. Auto loss/target type determination
 2. Auto generator setup
 3. Auto output layer setup
-4. Auto pre-training of dense layers before unfreezing transfer architecture (in parts or as a whole)
+4. Auto pre-training of new dense layers before unfreezing transfer architecture (in parts or as a whole)
 5. Auto augmentation setup (from templates and/or Custom)
 6. Auto best weights saving and loading
 7. Auto class weights calculation
