@@ -52,7 +52,7 @@ If you find the work usefull in your project, please cite:
   url = {https://doi.org/10.5281/zenodo.7865289}
 }
 ```
-> **Note:** When referencing, please consider additional attributions to Tensorflow and Keras, as our library is built around them.
+> **Note:** When referencing, please consider additional attributions to Tensorflow and Keras, as the library is built around them.
 
 # Usage Examples by Abstraction Level (and Capabilitity details)
 Bellow are examples by level of abstraction while detailing automation and configuration capabilities.
