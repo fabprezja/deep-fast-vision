@@ -40,16 +40,13 @@ pip install deepfastvision[gpu]
 If you find the work usefull in your project, please cite:
 
 ```bibtex
-@misc{fabprezja_2023,
-  author = {Fabi Prezja},
-  title = {Deep Fast Vision: Accelerated Deep Transfer Learning Vision Prototyping and Beyond},
-  month = apr,
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub Repository},
-  howpublished = {\url{https://github.com/fabprezja/deep-fast-vision}},
-  doi = {10.5281/zenodo.7865289},
-  url = {https://doi.org/10.5281/zenodo.7865289}
+@misc{prezja2023deep,
+      title={Deep Fast Vision: A Python Library for Accelerated Deep Transfer Learning Vision Prototyping}, 
+      author={Fabi Prezja},
+      year={2023},
+      eprint={2311.06169},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 > **Note:** When referencing, please consider additional attributions to Tensorflow and Keras, as the library is built around them.
